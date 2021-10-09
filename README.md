@@ -60,7 +60,7 @@ El contenido de `client` fue creado usando: Create React App.
 
 ## Enunciado
 
-La idea general es crear una aplicación en la cual se pueda ver información de  distintos paises utilizando la api externa [restcountries](https://restcountries.eu/) y a partir de ella poder, entre otras cosas:
+La idea general es crear una aplicación en la cual se pueda ver información de  distintos paises utilizando la api externa [restcountries](https://restcountries.com/) y a partir de ella poder, entre otras cosas:
 
   - Buscar paises
   - Filtrarlos / Ordenarlos
@@ -70,9 +70,9 @@ __IMPORTANTE__: Para las funcionalidades de filtrado y ordenamiento NO pueden ut
 
 ### Únicos Endpoints/Flags que pueden utilizar
 
-  - GET https://restcountries.eu/rest/v2/all
-  - GET https://restcountries.eu/rest/v2/name/{name}
-  - GET https://restcountries.eu/rest/v2/alpha/{code}
+  - GET https://restcountries.com/v3.1/all
+  - GET https://restcountries.com/v3.1/name/{name}
+  - GET https://restcountries.com/v3.1/alpha/{code}
 
 ### Requerimientos mínimos:
 

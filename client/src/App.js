@@ -1,9 +1,16 @@
-import './App.css';
+
+import Banner from './components/Banner';
+import About_Us from './components/About_Us';
+import Services from './components/Services';
+import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Henry Countries</h1>
+    <div>
+        <Banner/>
+        <About_Us/>
+        <Services/>
+        <Footer/>
     </div>
   );
 }

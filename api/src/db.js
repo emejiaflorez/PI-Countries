@@ -2,8 +2,7 @@ require('dotenv').config();
 const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
-const {
-  DB_USER, DB_PASSWORD, DB_HOST,
+const {DB_USER, DB_PASSWORD, DB_HOST,
 } = process.env;
 
 const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/countries`, {
@@ -30,12 +29,22 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
-const { Pokemon } = sequelize.models;
+const { Country, Activity } = sequelize.models;
 
 // Aca vendrian las relaciones
-// Product.hasMany(Reviews);
+// Relacion Muchos a Muchos 
+Activity.belongsToMany(Country,{through:('country_act')});
+Country.belongsToMany(Activity,{through:('country_act')});
+
+// module.exports = {
+//   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
+//   conn: sequelize,     // para importart la conexión { conn } = require('./db.js');
+// };
+
 
 module.exports = {
-  ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
-  conn: sequelize,     // para importart la conexión { conn } = require('./db.js');
+  Activity, //BD: activities
+  Country,  //BD: countries
+  conn: sequelize,
 };
+
